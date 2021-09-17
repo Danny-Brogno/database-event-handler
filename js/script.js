@@ -7,27 +7,79 @@ function vueInit() {
 
     data: {
 
-      items: [
+      "collection": [],
+      "select": "All",
+
+      "dataBaseInfo": [
         {
-          message: 'OK'
+          "eventType": "INSERTED",
+          "entityName": "PLACEMENT",
+          "entityId": 11,
+          "fieldsUpdated":
+          [
+            "null"
+          ]
         },
         {
-          message: 'Funziona'
+          "eventType": "UPDATED",
+          "entityName": "PLACEMENT",
+          "entityId": 22,
+          "fieldsUpdated":
+          [
+            "status",
+            "hoursPerDay"
+          ]
         },
         {
-          message: 'e'
+          "eventType": "DELETED",
+          "entityName": "COMPANY",
+          "entityId": 33,
+          "fieldsUpdated":
+          [
+            "status",
+            "companyUrl"
+          ]
         },
         {
-          message: 'sto'
+          "eventType": "INSERTED",
+          "entityName": "PLACEMENT",
+          "entityId": 44,
+          "fieldsUpdated":
+          [
+            "null"
+          ]
         },
         {
-          message: 'abusando'
+          "eventType": "UPDATED",
+          "entityName": "COMPANY",
+          "entityId": 55,
+          "fieldsUpdated":
+          [
+            "status",
+            "companyUrl",
+            "hoursPerDay"
+          ]
         },
         {
-          message: 'di'
+          "eventType": "DELETED",
+          "entityName": "PLACEMENT",
+          "entityId": 66,
+          "fieldsUpdated":
+          [
+            "null"
+          ]
         },
         {
-          message: 'Vue'
+          "eventType": "INSERTED",
+          "entityName": "COMPANY",
+          "entityId": 77,
+          "fieldsUpdated":
+          [
+            "status",
+            "companyUrl",
+            "hoursPerDay",
+            "overtimeRate"
+          ]
         }
       ]
 
@@ -45,4 +97,4 @@ function init () {
   vueInit();
 }
 
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener("DOMContentLoaded", init);
