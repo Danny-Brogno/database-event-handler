@@ -36,19 +36,3 @@ body {
   background-color: var(--normal-black);
   color: var(--normal-white);
 }
-
-.elem {
-  display: flex;
-}
-
-.elem a:nth-child(1) {
-  color: var(--roman-red);
-}
-
-.elem a:nth-child(2) {
-  color: var(--scottish-blue);
-}
-
-.elem a:nth-child(3) {
-  color: var(--emerald-green);
-}

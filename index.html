@@ -21,8 +21,8 @@
 
     <main id="app">
 
-      <div v-for="element in dataBaseInfo" class="outer-box">
-        <div v-if="select == element.status || select == 'All' " class="elem">
+      <!-- <div v-for="element in dataBaseInfo" class="outer-box">
+        <div v-if="select == element.eventType || select == 'All' " class="elem">
 
           <a href="#">
             <h3>{{ element.eventType }}</h3>
@@ -41,15 +41,11 @@
           </a>
 
         </div>
-      </div>
+      </div> -->
 
       <div> <!-- SELECT SECTION -->
-        <select v-model="select">
-          <option value="All">All</option>
-          <option value="Inserted">Inserted</option>
-          <option value="Updated">Updated</option>
-          <option value="Deleted">Deleted</option>
-        </select>
+        <input type="file" ref="doc" @change="readFile()" />
+        <div>{{ content }}</div>
       </div>
     </main>
 
