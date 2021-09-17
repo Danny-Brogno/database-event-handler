@@ -1,0 +1,38 @@
+:root {
+  --normal-black: #000;
+  --normal-white: #FFF;
+  --roman-red: #CD0000;
+  --scottish-blue: #0065bd;
+  --eleganBlue: #427ed1;
+  --lighter-blue: #4c8be0;
+  --darker-yellow: #ffaf00;
+  --coral-red: #FF7F50;
+  --emerald-green: #00C957;
+  --slate-blue: #7171C6;
+  --medium-purple: #8968CD;
+  --midnight-blue: #191970;
+  --aqua: #00FFFF;
+  --ruby-red: #e0115f;
+  --scarlet-red: #ff2400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  list-style: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  background-color: var(--normal-black);
+  color: var(--normal-white);
+}
