@@ -93,6 +93,11 @@ function vueInit() {
         if (this.file.name.includes(".txt")) {
           reader.onload = (res) => {
             this.content = res.target.result;
+
+            let myContent = JSON.stringify(res.target.result);
+            console.log(JSON.parse(myContent));
+
+
           };
           reader.onerror = (err) => console.log(err);
           reader.readAsText(this.file);
@@ -104,7 +109,7 @@ function vueInit() {
           reader.onerror = (err) => console.log(err);
           reader.readAsText(this.file);
         }
-        
+
       } // END of readFile() function
 
     } // END of METHODS
