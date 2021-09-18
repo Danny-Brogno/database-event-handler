@@ -8,7 +8,7 @@ function vueInit() {
     data: {
 
       "file": null,
-      "content": null
+      "content": null,
 
       // "dataBaseInfo": [
       //   {
@@ -96,6 +96,13 @@ function vueInit() {
 
             let myContent = JSON.stringify(res.target.result);
             console.log(JSON.parse(myContent));
+            const textLine = myContent.split("\n");
+
+            for (let i = 0; i < textLine.length; i++) {
+              let singleElement = textLine[i];
+              singleElement.split(" ");
+              console.log(textLine, singleElement);
+            }
 
 
           };
