@@ -97,11 +97,11 @@ function vueInit() {
             const textLine = this.content.split("\n");
             console.log(textLine);
 
-            for (let i = 0; i < textLine.length; i++) {
-              let singleElement = textLine[i];
-              singleElement.split(" ");
-              console.log(singleElement);
-            }
+            // for (let i = 0; i < this.content.length; i++) {
+            //   let singleElement = content[i];
+            //   console.log(singleElement);
+            // }
+
           };
           reader.onerror = (err) => console.log(err);
           reader.readAsText(this.file);
