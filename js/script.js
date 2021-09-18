@@ -94,17 +94,14 @@ function vueInit() {
           reader.onload = (res) => {
             this.content = res.target.result;
 
-            let myContent = JSON.stringify(res.target.result);
-            console.log(JSON.parse(myContent));
-            const textLine = myContent.split("\n");
+            const textLine = this.content.split("\n");
+            console.log(textLine);
 
             for (let i = 0; i < textLine.length; i++) {
               let singleElement = textLine[i];
               singleElement.split(" ");
-              console.log(textLine, singleElement);
+              console.log(singleElement);
             }
-
-
           };
           reader.onerror = (err) => console.log(err);
           reader.readAsText(this.file);
