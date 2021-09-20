@@ -8,80 +8,7 @@ function vueInit() {
     data: {
 
       "file": null,
-      "content": null,
-
-      // "dataBaseInfo": [
-      //   {
-      //     "eventType": "INSERTED",
-      //     "entityName": "PLACEMENT",
-      //     "entityId": 11,
-      //     "fieldsUpdated":
-      //     [
-      //       "null"
-      //     ]
-      //   },
-      //   {
-      //     "eventType": "UPDATED",
-      //     "entityName": "PLACEMENT",
-      //     "entityId": 22,
-      //     "fieldsUpdated":
-      //     [
-      //       "status",
-      //       "hoursPerDay"
-      //     ]
-      //   },
-      //   {
-      //     "eventType": "DELETED",
-      //     "entityName": "COMPANY",
-      //     "entityId": 33,
-      //     "fieldsUpdated":
-      //     [
-      //       "status",
-      //       "companyUrl"
-      //     ]
-      //   },
-      //   {
-      //     "eventType": "INSERTED",
-      //     "entityName": "PLACEMENT",
-      //     "entityId": 44,
-      //     "fieldsUpdated":
-      //     [
-      //       "null"
-      //     ]
-      //   },
-      //   {
-      //     "eventType": "UPDATED",
-      //     "entityName": "COMPANY",
-      //     "entityId": 55,
-      //     "fieldsUpdated":
-      //     [
-      //       "status",
-      //       "companyUrl",
-      //       "hoursPerDay"
-      //     ]
-      //   },
-      //   {
-      //     "eventType": "DELETED",
-      //     "entityName": "PLACEMENT",
-      //     "entityId": 66,
-      //     "fieldsUpdated":
-      //     [
-      //       "null"
-      //     ]
-      //   },
-      //   {
-      //     "eventType": "INSERTED",
-      //     "entityName": "COMPANY",
-      //     "entityId": 77,
-      //     "fieldsUpdated":
-      //     [
-      //       "status",
-      //       "companyUrl",
-      //       "hoursPerDay",
-      //       "overtimeRate"
-      //     ]
-      //   }
-      // ] // END of databaseInfo
+      "content": null
 
     }, // END of DATA
 
@@ -94,13 +21,14 @@ function vueInit() {
           reader.onload = (res) => {
             this.content = res.target.result;
 
-            const textLine = this.content.split("\n");
-            console.log(textLine);
 
-            // for (let i = 0; i < this.content.length; i++) {
-            //   let singleElement = content[i];
-            //   console.log(singleElement);
-            // }
+            const textLine = this.content.split("\n"); // JAVA language that tells the split to stop when it encounters the end of the line
+            // let arrayIntoObj = ({...textLine}); // Spread syntax (...) allows an iterable such as an array expression or string to be expanded in places where zero or more arguments (for function calls) or elements (for array literals) are expected, or an object expression to be expanded in places where zero or more key-value pairs (for object literals) are expected.
+
+            for (i = 0; i < textLine.length; i++) {
+              let iesimo = textLine[i];
+              console.log(iesimo.split(","));
+            }
 
           };
           reader.onerror = (err) => console.log(err);
