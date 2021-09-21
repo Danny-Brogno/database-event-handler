@@ -23,7 +23,7 @@ function vueInit() {
 
             // transforms into array with each line as element
             let myArr = this.content.split("\n");
-            console.log(myArr);
+            myArr.pop();
 
             // A loop to go looking for square brackets in the string (if there are any [in each element] )
             myArr.forEach((element) => {
@@ -35,9 +35,12 @@ function vueInit() {
               let contentBrackets = element.substring(bracket1, bracket2 + 1);
 
               // replace() does not change the original string; but at least we do not see them anymore
-              let removeBracket = contentBrackets.replace(contentBrackets, "");
-              // console.log(contentBrackets);
+              let removeBracket = element.replace(contentBrackets, "");
 
+              let stringIntoArr = removeBracket.split("\n"); // String into array.
+              let arrIntoObj = Object.assign({}, stringIntoArr); // Array into object.
+
+              console.log(arrIntoObj);
 
             });
 
