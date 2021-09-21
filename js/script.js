@@ -21,12 +21,31 @@ function vueInit() {
           reader.onload = (res) => {
             this.content = res.target.result;
 
-            let textLine = this.content.split("\n");
-            for (i = 0; i < textLine.length; i++) {
-              let singleElement = textLine[i];
-              let commaDivision = singleElement.split(",");
-              console.log(commaDivision);
-            }
+            // let recordArray1 = ["UPDATED", "Placement", "12", "null", "2018-04-10 12:44:00.123"];
+            // let recordObj = {
+            //   eventType: recordArray1[0],
+            //   entityName: recordArray1[1],
+            // }
+            // console.log(recordObj);
+
+            let myArr = this.content.split("\n");
+
+            myArr.forEach((element) => {
+
+              let bracket1 = element.indexOf("[");
+              let bracket2 = element.indexOf("]");
+              let removeBrackets = element.substring(bracket1, bracket2);
+              console.log(removeBrackets);
+
+            });
+
+
+            // for (i = 0; i< textLine.length; i++) {
+            //   let singleElement = textLine[i];
+            //   let commaDivision = singleElement.split(",");
+            //   console.log(subStr);
+            // }
+
 
           };
           reader.onerror = (err) => console.log(err);
