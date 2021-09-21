@@ -21,29 +21,32 @@ function vueInit() {
           reader.onload = (res) => {
             this.content = res.target.result;
 
-            // let recordArray1 = ["UPDATED", "Placement", "12", "null", "2018-04-10 12:44:00.123"];
-            // let recordObj = {
-            //   eventType: recordArray1[0],
-            //   entityName: recordArray1[1],
-            // }
-            // console.log(recordObj);
-
+            // transforms into array with each line as element
             let myArr = this.content.split("\n");
+            console.log(myArr);
 
+            // A loop to go looking for square brackets in the string (if there are any [in each element] )
             myArr.forEach((element) => {
 
               let bracket1 = element.indexOf("[");
               let bracket2 = element.indexOf("]");
-              let removeBrackets = element.substring(bracket1, bracket2);
-              console.log(removeBrackets);
+
+              // saving the content in a variable (this is the content of the square brackets)
+              let contentBrackets = element.substring(bracket1, bracket2 + 1);
+
+              // replace() does not change the original string; but at least we do not see them anymore
+              let removeBracket = contentBrackets.replace(contentBrackets, "");
+              // console.log(contentBrackets);
+
 
             });
 
-
-            // for (i = 0; i< textLine.length; i++) {
-            //   let singleElement = textLine[i];
+            // another loop on the array ans extracting the IESIMO element and then splitting the string every time it encounters a ","
+            // for (i = 0; i < myArr.length; i++) {
+            //   let singleElement = myArr[i];
             //   let commaDivision = singleElement.split(",");
-            //   console.log(subStr);
+            //
+            //   console.log(commaDivision);
             // }
 
 
