@@ -35,6 +35,12 @@ function vueInit() {
               let contentBrackets = element.substring(bracket1, bracket2 + 1);
 
               // now I gotta search and delete the square brackets that are in the substring otherwise I'll see this Array [ "[status", " companyUrl]" ]
+              let show1 = contentBrackets.includes("[");
+              let show2 = contentBrackets.includes("]");
+              let damnBrackets1 = contentBrackets.replace("[", "");
+              let damnBrackets2 = contentBrackets.replace("]", "");
+              let damnBracketsTogether = damnBrackets1 + damnBrackets2;
+              // console.log(show1, show2, damnBracketsTogether);
 
               let transIntoArr = contentBrackets.split(","); //  Transform content of brackets into array
 
