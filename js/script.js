@@ -33,33 +33,33 @@ function vueInit() {
 
               // saving the content in a variable (this is the content of the square brackets)
               let contentBrackets = element.substring(bracket1, bracket2 + 1);
-
               // now I gotta search and delete the square brackets that are in the substring otherwise I'll see this Array [ "[status", " companyUrl]" ]
-              let show1 = contentBrackets.includes("[");
-              let show2 = contentBrackets.includes("]");
-              let damnBrackets1 = contentBrackets.replace("[", "");
-              let damnBrackets2 = contentBrackets.replace("]", "");
-              let damnBracketsTogether = damnBrackets1 + damnBrackets2;
-              // console.log(show1, show2, damnBracketsTogether);
+              contentBrackets = contentBrackets.replace("[", "").replace("]", "");
 
-              let transIntoArr = contentBrackets.split(","); //  Transform content of brackets into array
+              let transIntoArr = contentBrackets.split(", "); //  Transform content of brackets into array. That extra space is to not see space in the console
 
               // replace() does not change the original string; but at least we do not see them anymore
               let removeBracket = element.replace(contentBrackets, "");
 
-              let stringIntoArr = removeBracket.split(","); // String into array.
+              let stringIntoArr = removeBracket.split(", "); // String into array. That extra space is to not see space in the console
 
+
+              for (i = 0; i < stringIntoArr.length; i++) {
+                const iesimo = stringIntoArr[i];
+                console.log(iesimo.toString());
+              }
+              
               let recordArray = ["UPDATED",  "Placement", "12", "null", "2018-04-10 12:44:00.123"];
 
               let recordObj = {
-                eventTyple: recordArray[0],
+                eventType: recordArray[0],
                 entityName: recordArray[1],
                 entityId: recordArray[2],
                 fieldsUpdated: transIntoArr,
                 timestamp: recordArray[4],
               }
 
-              console.log(recordObj);
+              // console.log(recordObj);
 
             }); // END of forEach()
 
