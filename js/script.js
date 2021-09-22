@@ -34,26 +34,31 @@ function vueInit() {
               // saving the content in a variable (this is the content of the square brackets)
               let contentBrackets = element.substring(bracket1, bracket2 + 1);
 
+              // now I gotta search and delete the square brackets that are in the substring otherwise I'll see this Array [ "[status", " companyUrl]" ]
+
+              let transIntoArr = contentBrackets.split(","); //  Transform content of brackets into array
+
               // replace() does not change the original string; but at least we do not see them anymore
               let removeBracket = element.replace(contentBrackets, "");
 
-              let stringIntoArr = removeBracket.split("\n"); // String into array.
-              let arrIntoObj = Object.assign({}, stringIntoArr); // Array into object.
+              let stringIntoArr = removeBracket.split(","); // String into array.
 
-              console.log(arrIntoObj);
+              let recordArray = ["UPDATED",  "Placement", "12", "null", "2018-04-10 12:44:00.123"];
 
-            });
+              let recordObj = {
+                eventTyple: recordArray[0],
+                entityName: recordArray[1],
+                entityId: recordArray[2],
+                fieldsUpdated: transIntoArr,
+                timestamp: recordArray[4],
+              }
 
-            // another loop on the array ans extracting the IESIMO element and then splitting the string every time it encounters a ","
-            // for (i = 0; i < myArr.length; i++) {
-            //   let singleElement = myArr[i];
-            //   let commaDivision = singleElement.split(",");
-            //
-            //   console.log(commaDivision);
-            // }
+              console.log(recordObj);
 
+            }); // END of forEach()
 
-          };
+          }; // END of reader.onload (under if)
+
           reader.onerror = (err) => console.log(err);
           reader.readAsText(this.file);
         } else {
