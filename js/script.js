@@ -8,7 +8,8 @@ function vueInit() {
     data: {
 
       "file": null,
-      "content": null
+      "content": null,
+      "newArr": [],
 
     }, // END of DATA
 
@@ -53,7 +54,7 @@ function vueInit() {
                 timestamp: stringIntoArr[4],
               }
 
-              console.log(recordObj);
+              console.log(typeof recordObj);
 
             }); // END of forEach()
 
