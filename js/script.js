@@ -43,23 +43,17 @@ function vueInit() {
 
               let stringIntoArr = removeBracket.split(", "); // String into array. That extra space is to not see space in the console
 
-
-              for (i = 0; i < stringIntoArr.length; i++) {
-                const iesimo = stringIntoArr[i];
-                console.log(iesimo.toString());
-              }
-              
               let recordArray = ["UPDATED",  "Placement", "12", "null", "2018-04-10 12:44:00.123"];
 
               let recordObj = {
-                eventType: recordArray[0],
-                entityName: recordArray[1],
-                entityId: recordArray[2],
+                eventType: stringIntoArr[0],
+                entityName: stringIntoArr[1],
+                entityId: stringIntoArr[2],
                 fieldsUpdated: transIntoArr,
-                timestamp: recordArray[4],
+                timestamp: stringIntoArr[4],
               }
 
-              // console.log(recordObj);
+              console.log(recordObj);
 
             }); // END of forEach()
 
