@@ -23,49 +23,113 @@
 
     <main id="app">
 
-        <div id="logo-img">
-          <a href="#">
-            <img :src="logoImg">
-          </a>
-        </div>
+      <div class="logo-img">
+        <a href="#">
+          <img :src="logoImg">
+        </a>
+      </div>
 
-        <div class="input-file">
-          <input type="file" ref="doc" @change="readFile()" />
-        </div>
+      <div class="input-file">
+        <input type="file" ref="doc" @change="readFile()" />
+      </div>
 
-        <!-- debug -->
-        <!-- <div>{{ content }}</div> -->
+      <div>
 
-        <div>
-          <div> <!-- START OF INPUT SECTION -->
-            <table class="kyloe-table">
+        <div> <!-- START OF INPUT SECTION -->
+          
+          <table class="kyloe-table">
 
-              <tr>
-                <th>Event Type</th>
-                <th>Entity Name</th>
-                <th>Entity ID</th>
-                <th>Updated Fields</th>
-                <th>Timestamp</th>
-              </tr>
+            <tr>
 
-              <tr v-for="elem in newArr" v-if="select == elem.eventType || select == 'All' ">
-                <td>{{ elem.eventType }}</td>
-                <td>{{ elem.entityName }}</td>
-                <td> {{ elem.entityId }}</td>
-                <td> {{ elem.fieldsUpdated }}</td>
-                <td> {{ elem.timestamp }}</td>
-              </tr>
+              <th>
+                <h2>Event Type</h2>
+                <select v-model="select">
+                  <option value="All">All</option>
+                  <option :value="item" v-for="item in selectType">{{ item }}</option>
+                </select>
+              </th>
 
-            </table>
+              <th>
+                <h2>Entity Name</h2>
+                <select v-model="select">
+                  <option value="All">All</option>
+                  <option :value="item" v-for="item in selectName">{{ item }}</option>
+                </select>
+              </th>
 
-            <section>
-              <select v-model="select">
+              <th>
+                <h2>Entity ID</h2>
+                <select v-model="select">
+                  <option value="All">All</option>
+                </select>
+              </th>
+
+              <th>
+                <h2>Updated fields</h2>
+                <select v-model="select">
                 <option value="All">All</option>
-                <option value="Inserted">Inserted</option>
-                <option value="Updated">Updated</option>
-                <option value="Deleted">Deleted</option>
-              </select>
-            </section>
+                </select>
+              </th>
+
+              <th>
+                <h2>Timestamp</h2>
+                <select v-model="select">
+                  <option value="All">All</option>
+                </select>
+              </th>
+
+            </tr>
+
+            <tr v-for="elem in newArr" v-if="select == elem.entityName || select == elem.eventType || select == 'All' ">
+
+              <td>
+                <a href="#">
+                  {{ elem.eventType }}
+                </a>
+              </td>
+
+              <td>
+                <a href="#">
+                  {{ elem.entityName }}
+                </a>
+              </td>
+
+              <td>
+                <a href="#">
+                  {{ elem.entityId }}
+                </a>
+              </td>
+
+              <td>
+                <a href="#">
+                  {{ elem.fieldsUpdated }}
+                </a>
+              </td>
+
+              <td>
+                <a href="#">
+                  {{ elem.timestamp }}
+                </a>
+              </td>
+
+            </tr>
+
+          </table>
+
+          <div id="danny">
+            <ul>
+              <li>b</li>
+              <li>y</li>
+              <li>&nbsp</li>
+              <li>D</li>
+              <li>a</li>
+              <li>n</li>
+              <li>n</li>
+              <li><h2>Y</h2></li>
+            </ul>
+
+          </div>
+
         </div>
 
       </div>

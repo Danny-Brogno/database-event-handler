@@ -15,7 +15,8 @@
   --ruby-red: #e0115f;
   --scarlet-red: #ff2400;
   --elegant-gray: #dddddd;
-  --kyloe-pink: #d30059;
+  --kyloe-pink: #e1208b;
+  --lime-danny: #00FF00;
 }
 
 * {
@@ -38,12 +39,10 @@ body {
 font-family: 'Merienda', cursive;
 }
 
-#logo-img {
+.logo-img {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
-
 
 .kyloe-table {
   border-collapse: collapse;
@@ -58,4 +57,47 @@ font-family: 'Merienda', cursive;
 
 .kyloe-table tr:nth-child(even) {
   background-color: var(--elegant-gray);
+}
+
+table tr th select {
+  height: 20px;
+  color: var(--normal-white);
+  background-color: var(--kyloe-pink);
+  border: none;
+  border-radius: 5px;
+}
+
+table tr th select:hover {
+  background-color: var(--scottish-blue);
+}
+
+#danny {
+  width: 95%;
+  font-size: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#danny ul {
+  /* to put the li inline */
+  display: flex;
+}
+
+#danny ul li:last-of-type {
+  position: relative;
+  bottom: 8px;
+  color: var(--lime-danny);
+  cursor: pointer;
+  animation: rotation 4s linear infinite;
+}
+
+@keyframes rotation {
+  0% {text-shadow: 0 0 purple;}
+  25% {text-shadow: 1px 0 var(--medium-purple), 2px 0 var(--medium-purple), 3px 0 var(--medium-purple), 4px 0 var(--medium-purple), 5px 0 var(--medium-purple); }
+  50% {text-shadow: 0 0 purple;}
+  75% {text-shadow: -1px 0 var(--scottish-blue), -2px 0 var(--scottish-blue), -3px 0 var(--scottish-blue), -4px 0 var(--scottish-blue), -5px 0 var(--scottish-blue); }
+  100% {text-shadow: 0 0 gold;}
+
+  from {transform: rotateY(0deg);}
+  to {transform: rotateY(-360deg);}
 }

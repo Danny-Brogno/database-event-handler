@@ -64,8 +64,6 @@ function vueInit() {
 
             }); // END of forEach()
 
-
-
           }; // END of reader.onload (under if)
           reader.onerror = (err) => console.log(err);
           reader.readAsText(this.file);
@@ -80,7 +78,43 @@ function vueInit() {
 
       } // END of readFile() function
 
-    } // END of METHODS
+    }, // END of METHODS
+
+    computed: {
+
+      selectType: function() {
+
+        const selectOption = [];
+
+        for(i = 0; i < this.newArr.length; i++) {
+          let iesimo = this.newArr[i];
+
+          if(!selectOption.includes(iesimo.eventType)) {
+            selectOption.push(iesimo.eventType);
+          } // END IF
+
+        } // END FOR
+        return selectOption;
+
+      }, // END selectType()
+
+      selectName: function() {
+
+        const selectOption = [];
+
+        for(i = 0; i < this.newArr.length; i++) {
+          let iesimo = this.newArr[i];
+
+          if(!selectOption.includes(iesimo.entityName)) {
+            selectOption.push(iesimo.entityName);
+          } // END IF
+
+        } // END FOR
+        return selectOption;
+
+      } // END selectName()
+
+    } // END COMPUTED
 
   }) // END NEW VUE
 
