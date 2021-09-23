@@ -11,7 +11,7 @@ function vueInit() {
       "file": null,
       "content": null,
       "newArr": [],
-      "logoImg": "img/kyloe.png",
+      "logoImg": "img/bull.png",
       "select": "All"
 
     }, // END of DATA
@@ -57,9 +57,10 @@ function vueInit() {
                 timestamp: stringIntoArr[4],
               }
 
+              console.log(recordObj)
               this.newArr.push(recordObj);
-              console.log(recordObj);
-              console.log(this.newArr);
+              // console.log(recordObj);
+              // console.log(this.newArr);
 
             }); // END of forEach()
 

@@ -38,6 +38,13 @@ body {
 font-family: 'Merienda', cursive;
 }
 
+#logo-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 .kyloe-table {
   border-collapse: collapse;
   width: 100%;
