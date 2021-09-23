@@ -14,6 +14,8 @@
   --aqua: #00FFFF;
   --ruby-red: #e0115f;
   --scarlet-red: #ff2400;
+  --elegant-gray: #dddddd;
+  --kyloe-pink: #d30059;
 }
 
 * {
@@ -33,6 +35,20 @@ li {
 }
 
 body {
-  background-color: var(--normal-black);
-  color: var(--normal-white);
+font-family: 'Merienda', cursive;
+}
+
+.kyloe-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.kyloe-table td, th {
+  border: 1px solid var(--elegant-gray);
+  text-align: left;
+  padding: 8px;
+}
+
+.kyloe-table tr:nth-child(even) {
+  background-color: var(--elegant-gray);
 }

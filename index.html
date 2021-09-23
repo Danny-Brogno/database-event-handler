@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <!-- google fonts - Merienda -->
+  <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     <!-- VUE -->
@@ -21,35 +23,49 @@
 
     <main id="app">
 
-      <!-- <div v-for="element in dataBaseInfo" class="outer-box">
-        <div v-if="select == element.eventType || select == 'All' " class="elem">
-
-          <a href="#">
-            <h3>{{ element.eventType }}</h3>
-          </a>
-
-          <a href="#">
-            <h3>{{ element.entityName }}</h3>
-          </a>
-
-          <a href="#">
-            <h3>{{ element.entityId }}</h3>
-          </a>
-
-          <a href="#">
-            <h3>{{ element.fieldsUpdated }}</h3>
-          </a>
-
+        <div>
+          <img :src="logoImg">
         </div>
-      </div> -->
-
-      <div> <!-- SELECT SECTION -->
-        <input type="file" ref="doc" @change="readFile()" />
-        <div>{{ content }}</div>
 
         <div>
-          ciao
+          <input type="file" ref="doc" @change="readFile()" />
         </div>
+
+        <!-- debug -->
+        <!-- <div>{{ content }}</div> -->
+
+        <div>
+          <div> <!-- START OF INPUT SECTION -->
+            <table class="kyloe-table">
+
+              <tr>
+                <th>Event Type</th>
+                <th>Entity Name</th>
+                <th>Entity ID</th>
+                <th>Updated Fields</th>
+                <th>Timestamp</th>
+              </tr>
+
+              <tr v-for="elem in newArr" v-if="select == elem.eventType || select == 'All' ">
+                <td>{{ elem.eventType }}</td>
+                <td>{{ elem.entityName }}</td>
+                <td> {{ elem.entityId }}</td>
+                <td> {{ elem.fieldsUpdated }}</td>
+                <td> {{ elem.timestamp }}</td>
+              </tr>
+
+            </table>
+
+            <section>
+              <select v-model="select">
+                <option value="All">All</option>
+                <option value="Inserted">Inserted</option>
+                <option value="Updated">Updated</option>
+                <option value="Deleted">Deleted</option>
+              </select>
+            </section>
+        </div>
+
       </div>
 
     </main>

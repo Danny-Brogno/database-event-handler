@@ -7,9 +7,12 @@ function vueInit() {
 
     data: {
 
+      // main
       "file": null,
       "content": null,
       "newArr": [],
+      "logoImg": "img/kyloe.png",
+      "select": "All"
 
     }, // END of DATA
 
@@ -39,7 +42,7 @@ function vueInit() {
 
               let transIntoArr = contentBrackets.split(", "); //  Transform content of brackets into array. That extra space is to not see space in the console
 
-              // replace() does not change the original string; but at least we do not see them anymore
+              // replace() does not change the original string
               let removeBracket = element.replace(contentBrackets, "");
 
               let stringIntoArr = removeBracket.split(", "); // String into array. That extra space is to not see space in the console
@@ -54,12 +57,15 @@ function vueInit() {
                 timestamp: stringIntoArr[4],
               }
 
-              console.log(typeof recordObj);
+              this.newArr.push(recordObj);
+              console.log(recordObj);
+              console.log(this.newArr);
 
             }); // END of forEach()
 
-          }; // END of reader.onload (under if)
 
+
+          }; // END of reader.onload (under if)
           reader.onerror = (err) => console.log(err);
           reader.readAsText(this.file);
         } else {
